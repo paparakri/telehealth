@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA0poFIb61l7Tpy06DqH3m1pdm_8a-KBrM",
+    authDomain: "telehealth-342b7.firebaseapp.com",
+    databaseURL: "https://telehealth-342b7.firebaseio.com",
+    projectId: "telehealth-342b7",
+    storageBucket: "telehealth-342b7.appspot.com",
+    messagingSenderId: "777275593607",
+    appId: "1:777275593607:web:4fe30b89129c6b78013922",
+    measurementId: "G-V4LHNCGYVK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
