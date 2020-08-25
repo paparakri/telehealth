@@ -11,10 +11,11 @@ export const logout = () => {
     RNRestart.Restart();
 }
 
-export const onSignIn = (user, pass) => {
+export const onSignIn = (user, pass, id) => {
     AsyncStorage.setItem(USER_KEY, "true");
     AsyncStorage.setItem('username', user);
     AsyncStorage.setItem('password', pass);
+    AsyncStorage.setItem('id', id);
 }
 export const onSignOut = () => AsyncStorage.setItem(USER_KEY, "false");
 

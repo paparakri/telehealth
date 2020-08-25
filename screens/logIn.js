@@ -38,10 +38,11 @@ function App({ navigation }){
     else{
       console.log('1username: ' + username + '\n' + '1password:' + password);
       firebase.auth().signInWithEmailAndPassword(username, password)
-      .then(() => {
-      console.log('User account signed in!');
-      onSignIn(username, password);
-      RNRestart.Restart();
+      .then((data) => {
+        userId = data.user.uid;
+        console.log('User account signed in!');
+        onSignIn(username, password, userId);
+        RNRestart.Restart();
       })
       .catch((error) => {
         alert("Wrong email or password.");

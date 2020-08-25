@@ -39,10 +39,17 @@ function App({ navigation }){
     }
     else{
         firebase.auth().createUserWithEmailAndPassword(mail.toString().trim(), password.toString().trim())
-        .then(() => {
-        console.log('User account created & signed in!');
-        onSignIn(mail, password);
-        RNRestart.Restart();
+        .then((data) => {
+          userId = data.user.uid;
+          console.log('User account created & signed in!');
+          onSignIn(mail, password, userId);
+          RNRestart.Restart();
+          firebase.database().ref('users/'+userId).set({
+            name: fullName,
+            username: username,
+          }).catch((error) => {
+            alert(error);
+          })
         })
         .catch((error) => {
           alert("Error With Creating User.");
