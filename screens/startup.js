@@ -15,7 +15,7 @@ import {
 const dimensions = Dimensions.get('window');
 
 function App({ navigation }) {
-  
+
   return (
     <>
     <View style={styles.all}>

@@ -26,7 +26,8 @@ function App({ navigation }){
   const [fullName, SetFullName] = useState('');
   const [mail, SetMail] = useState('');
 
-  const logIn = async () => {
+  const logIn = () => {
+    console.log('Pressed Button');
     if(mail=='' || password==''){
       Alert.alert(
         'Required Fields',
@@ -38,22 +39,27 @@ function App({ navigation }){
       );
     }
     else{
-        firebase.auth().createUserWithEmailAndPassword(mail.toString().trim(), password.toString().trim())
-        .then((data) => {
-          userId = data.user.uid;
-          console.log('User account created & signed in!');
-          onSignIn(mail, password, userId);
-          RNRestart.Restart();
-          firebase.database().ref('users/'+userId).set({
-            name: fullName,
-            username: username,
-          }).catch((error) => {
-            alert(error);
-          })
+      console.log('Everything Is Filled Correctly');
+      firebase.auth().createUserWithEmailAndPassword(mail.toString(), password.toString())
+      .then((data) => {
+        console.log('User account created & signed in!');
+        userId = data.user.uid;
+        
+        console.log('userId created');
+        onSignIn(mail, password, userId);
+        console.log('debug1')
+        firebase.database().ref('users/'+userId).set({
+          name: fullName,
+          username: username,
+        }).catch((error) => {
+          alert(error);
         })
-        .catch((error) => {
-          alert("Error With Creating User.");
-        });
+        console.log('debug2');
+        RNRestart.Restart();
+      })
+      .catch((error) => {
+        alert("Error With Creating User.");
+      });
     }
   }
 

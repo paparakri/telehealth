@@ -37,6 +37,7 @@ const firebaseConfig = {
 
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
+  console.log('\n--------------------------------------\nFirebase Initialized\n--------------------------------------')
 }
   
 
