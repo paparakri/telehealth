@@ -33,9 +33,13 @@ function App({ navigation }){
   
     return(
         <>
-        <View style={styles.all}>
+        <View style={styles.all} style={{alignItems:"center"}}>
           <SafeAreaView style={styles.SafeAreaView}>
             <Text>Hey {nameShow}</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Messager')} style={{borderWidth:1, borderColor:'rgba(0,0,0,0.2)', alignItems:'center',
+              justifyContent:'center', width:150, height:40, backgroundColor:'#90bede', borderRadius:50}}>
+              <Text style={{color: Colors.white}}>Messeger</Text>
+            </TouchableOpacity>
           </SafeAreaView>
         </View>
         </>

@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {isSignedIn, logout} from './auth'
 import SignUp from './screens/signUp';
+import Messager from './screens/messager';
 import LogIn from './screens/logIn';
 import startup from './screens/startup';
 import Home from './screens/home';
@@ -74,6 +75,7 @@ class TopComponent extends Component {
               <Text>Out</Text>
             </TouchableOpacity>
           )}} name="Home" component={Home} />
+          <Stack.Screen name="Messager" component={Messager}/>
           </Stack.Navigator>
         </NavigationContainer>
       )

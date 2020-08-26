@@ -6,7 +6,6 @@ import {
   Dimensions, SafeAreaView, StyleSheet, ScrollView, View, Image, 
   Button, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard, Text, StatusBar, Alert, TextInput,
 } from 'react-native';
-
 import {
   Header,
   LearnMoreLinks,
