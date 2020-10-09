@@ -1,5 +1,5 @@
 # Telehealth
-Telehealth app developed with React Native to assist with social distancing during the panmdemic.
+Telehealth app developed with React Native to assist with social distancing during the pandemic.
 
 ## Client
 Client side needs to SignIn/SignUp and send a message.
