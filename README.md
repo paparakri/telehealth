@@ -1,5 +1,5 @@
 # Telehealth
-Application created using react so a doctor (parent) can track work through the pandemic.
+Telehealth app developed with React Native to assist with social distancing during the pandemic.
 
 ## Client
 Client side needs to SignIn/SignUp and send a message.
