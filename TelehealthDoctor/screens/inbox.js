@@ -17,14 +17,14 @@ import {
 function App({ navigation }){
 
     const [people, setPeople] = useState([
-        {name: 'Chris', key: '1'},
-        {name: 'John', key: '2'},
-        {name: 'Asshat', key: '3'},
-        {name: 'Duchebag', key: '4'},
-        {name: 'Preacher', key: '5'},
-        {name: 'Kris', key: '6'},
-        {name: 'Sanctuary', key: '7'},
-        {name: 'Iron', key: '8'},
+        {name: 'Chris', key: '567867891'},
+        {name: 'John', key: '2456745'},
+        {name: 'Asshat', key: '337567834'},
+        {name: 'Duchebag', key: '45685674'},
+        {name: 'Preacher', key: '5467578'},
+        {name: 'Kris', key: '6786'},
+        {name: 'Sanctuary', key: '73564456'},
+        {name: 'Iron', key: '56875678'},
     ]);
 
     return(
@@ -34,7 +34,7 @@ function App({ navigation }){
             data={people}
             renderItem={({ item }) => (
                 <View style={styles.item}>
-                    <Text style={{color:Colors.white, alignSelf:'flex-start'}}>{item.name}</Text>
+                    <Text style={{color:Colors.black, alignSelf:'flex-start', width:70}}>{item.name}</Text>
                 </View>
             )}
           />
@@ -45,12 +45,11 @@ function App({ navigation }){
 
 const styles = StyleSheet.create({
     item: {
-        alignSelf:'center',
-        backgroundColor:Colors.black,
-        margin:5,
+        borderColor:Colors.black,
+        borderBottomWidth:1,
         paddingTop:20,
         paddingBottom:20,
-        paddingLeft:100,
+        paddingLeft:20,
         paddingRight:100
     },
     engine: {
