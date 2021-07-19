@@ -17,13 +17,18 @@ const dimensions = Dimensions.get('window');
 
 function App({ navigation }){
     const [nameShow, SetNameShow] = useState('');
+    const [people, SetPeople] = useState('');
     firebase.auth().onAuthStateChanged((user) => {
     if(user){
       temp = 'users/'+user.uid.toString();
       firebase.database().ref(temp).once('value').then(snapshot => {
         SetNameShow(snapshot.val().name);
         console.log(temp);
-        //console.log(snapshot.val().name);
+      })
+      temp = 'messages/'+user.uid.toString();
+      firebase.database().ref(temp).once('value').then(snapshot => {
+        //SetPeople(snapshot.child());
+        //console.log(people);
       })
     }
     else{
@@ -36,11 +41,11 @@ function App({ navigation }){
         <View style={styles.all} style={{alignItems:"center"}}>
           <SafeAreaView style={styles.SafeAreaView}>
             <Text>Hey {nameShow}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Messager')} style={{borderWidth:1, borderColor:'rgba(0,0,0,0.2)', alignItems:'center',
-              justifyContent:'center', width:150, height:40, backgroundColor:'#90bede', borderRadius:50}}>
-              <Text style={{color: Colors.white}}>Messeger</Text>
-            </TouchableOpacity>
           </SafeAreaView>
+          <TouchableOpacity onPress={() => navigation.navigate('Messager')} style={{borderWidth:1, borderColor:'rgba(0,0,0,0.2)', alignSelf: "flex-start", marginTop: 20,
+              justifyContent:'center', width:40, height:40, backgroundColor:'#90bede', borderRadius:15}}>
+              <Text style={{color: Colors.white, textAlign: "center"}}>L</Text>
+          </TouchableOpacity>
         </View>
         </>
     );
